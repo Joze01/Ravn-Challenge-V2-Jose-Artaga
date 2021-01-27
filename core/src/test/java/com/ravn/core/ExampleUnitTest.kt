@@ -1,4 +1,4 @@
-package com.applaudostudios.ravn_challenge_v2_jose_arteaga
+package com.ravn.core
 
 import org.junit.Test
 
