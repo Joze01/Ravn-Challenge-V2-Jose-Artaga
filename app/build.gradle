@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id "com.apollographql.apollo" version"2.2.0"
 }
 
 android {
@@ -42,6 +43,10 @@ android {
         }
     }
     dynamicFeatures = [':data', ':core']
+}
+
+apollo {
+    generateKotlinModels.set(true)
 }
 
 dependencies {
@@ -101,8 +106,6 @@ dependencies {
     kapt                        lifecycle.compiler
 
     // Networking
-    implementation              networking.retrofit
-    implementation              networking.converter_gson
     implementation              networking.logging_interceptor
     implementation              networking.gson
     implementation              networking.glide
