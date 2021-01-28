@@ -1,5 +1,5 @@
-query AllPeopleList{
-   allPeople{
+query AllPeopleList($pageSize:Int!,$cursor:String!){
+   allPeople(first: $pageSize after: $cursor){
     people {
       id
       name
@@ -17,6 +17,12 @@ query AllPeopleList{
           model
         }
       }
+    }
+    pageInfo{
+    startCursor
+    endCursor
+    hasNextPage
+    hasPreviousPage
     }
   }
 }

@@ -8,17 +8,17 @@ import com.ravn.core.model.util.Event
 
 class PeopleListItemViewModel(
     val personModel: PeopleModel,
-    val mutableLiveData: MutableLiveData<Event<String>>
+    val mutableLiveData: MutableLiveData<Event<PeopleModel>>
 ) : ViewModel() {
     val peopleName = ObservableField("")
     val specie = ObservableField("")
 
-    init {
+    fun bindData() {
         peopleName.set(personModel.name)
         specie.set(personModel.species?.name)
     }
 
     fun onItemClick() {
-        mutableLiveData.postValue(Event(personModel.id))
+        mutableLiveData.postValue(Event(personModel))
     }
 }
