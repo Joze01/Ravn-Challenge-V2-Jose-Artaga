@@ -3,7 +3,7 @@ package com.ravn.ravn_challenge_v2_jose_arteaga.presentation.home
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ravn.core.model.starwars.PersonModel
+import com.ravn.core.model.starwars.PeopleModel
 import com.ravn.core.model.util.Event
 
 class HomeViewModel : ViewModel() {
@@ -14,5 +14,5 @@ class HomeViewModel : ViewModel() {
     val showRecyclerView = ObservableBoolean(false)
 
     //LiveData for recyclerView
-    val mutableLiveData = MutableLiveData<Event<List<PersonModel>>>()
+    val mutableLiveData = MutableLiveData<Event<List<PeopleModel>>>()
 }

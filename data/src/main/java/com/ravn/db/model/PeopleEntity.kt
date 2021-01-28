@@ -2,11 +2,13 @@ package com.ravn.db.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.ravn.core.model.starwars.PeopleModel
 import com.ravn.core.model.starwars.SpecieModel
 import com.ravn.core.model.starwars.VehiclesModel
+import com.ravn.util.mapper.CoreMapper
 
 @Entity
-class personEntity(
+class PeopleEntity(
     @PrimaryKey
     val id: String,
     val name: String? = null,
@@ -15,5 +17,8 @@ class personEntity(
     val skinColor: String? = null,
     val birthYear: String? = null,
     val vehiclesConnection: MutableList<VehiclesModel>? = null,
-    val species: MutableList<SpecieModel>? = null
-)
+    val species: SpecieModel? = null
+) : CoreMapper<PeopleModel>() {
+    override fun toCoreModel() = parse<PeopleModel>(this)
+
+}

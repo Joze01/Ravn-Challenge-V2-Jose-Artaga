@@ -4,7 +4,6 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
-    id "com.apollographql.apollo" version"2.2.0"
 }
 
 android {
@@ -42,11 +41,6 @@ android {
             includeAndroidResources = true
         }
     }
-    dynamicFeatures = [':data', ':core']
-}
-
-apollo {
-    generateKotlinModels.set(true)
 }
 
 dependencies {
@@ -54,7 +48,6 @@ dependencies {
     // Modules
     implementation              project(":core")
     implementation              project(":data")
-
     // Core
     implementation              core.kotlin_stdlib
     implementation              core.core_ktx

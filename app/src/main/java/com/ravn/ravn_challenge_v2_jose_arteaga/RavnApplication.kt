@@ -1,6 +1,9 @@
 package com.ravn.ravn_challenge_v2_jose_arteaga
 
 import android.app.Application
+import com.ravn.di.apiModule
+import com.ravn.di.databaseModule
+import com.ravn.di.repositoryModule
 import com.ravn.ravn_challenge_v2_jose_arteaga.di.useCaseModule
 import com.ravn.ravn_challenge_v2_jose_arteaga.di.viewModuleModule
 import org.koin.android.ext.koin.androidContext
@@ -26,6 +29,9 @@ class RavnApplication : Application() {
      * @return listOf Koin Modules
      */
     open fun appModules() = listOf(
+        apiModule,
+        databaseModule,
+        repositoryModule,
         useCaseModule,
         viewModuleModule,
     )
