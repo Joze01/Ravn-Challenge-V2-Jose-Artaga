@@ -41,7 +41,6 @@ android {
             includeAndroidResources = true
         }
     }
-    dynamicFeatures = [':data', ':core']
 }
 
 dependencies {
@@ -49,7 +48,6 @@ dependencies {
     // Modules
     implementation              project(":core")
     implementation              project(":data")
-
     // Core
     implementation              core.kotlin_stdlib
     implementation              core.core_ktx
@@ -101,8 +99,6 @@ dependencies {
     kapt                        lifecycle.compiler
 
     // Networking
-    implementation              networking.retrofit
-    implementation              networking.converter_gson
     implementation              networking.logging_interceptor
     implementation              networking.gson
     implementation              networking.glide
