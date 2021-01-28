@@ -1,5 +1,5 @@
-query allPeople(){
- allPeople(first:5 after:""){
+query AllPeopleList{
+   allPeople{
     people {
       id
       name
@@ -17,12 +17,6 @@ query allPeople(){
           model
         }
       }
-    }
-      pageInfo{
-      startCursor
-      endCursor
-      hasNextPage
-      hasPreviousPage
     }
   }
 }

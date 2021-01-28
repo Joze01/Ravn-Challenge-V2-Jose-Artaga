@@ -6,6 +6,5 @@ import com.ravn.core.repository.PeopleRepository
 class FetchStarWarsPeopleUseCase(
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     val peopleRepository: PeopleRepository
-) {
-    operator fun invoke(pageSize: Int) = peopleRepository.fetchStarWarsPeople(pageSize)
+) { operator fun invoke(pageSize: Int) = peopleRepository.fetchStarWarsPeople(pageSize)
 }
