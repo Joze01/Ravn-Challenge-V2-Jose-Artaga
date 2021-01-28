@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id "com.apollographql.apollo" version"2.2.0"
 }
 
 android {
@@ -33,6 +34,10 @@ android {
     }
 }
 
+apollo {
+    generateKotlinModels.set(true)
+}
+
 dependencies {
 
     // Modules
@@ -61,5 +66,9 @@ dependencies {
     implementation              networking.retrofit
     implementation              networking.converter_gson
     implementation              networking.logging_interceptor
+    // The core runtime dependencies
+    implementation("com.apollographql.apollo:apollo-runtime:2.2.0")
+    // Coroutines extensions for easier asynchronicity handling
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.2.0")
     implementation              networking.gson
 }
