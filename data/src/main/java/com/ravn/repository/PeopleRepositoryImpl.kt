@@ -25,6 +25,10 @@ class PeopleRepositoryImpl(
         firstLoad: Boolean
     ): LiveData<Resource<List<PeopleModel>>> =
         NetworkBoundResource.create(
+            // Can handle logic to get data only from the cache for this example will be always true
+            shouldFetch = {
+                true
+            },
             query = {
                 peopleDao.getPeople().map {
                     it.toCoreModel()
@@ -74,8 +78,4 @@ class PeopleRepositoryImpl(
                 peopleDao.savePeople(response)
             }
         )
-
-
-    override suspend fun getStarWarsPeopleById(peopleId: String): PeopleModel =
-        peopleDao.getPeopleById(peopleId).toCoreModel()
 }

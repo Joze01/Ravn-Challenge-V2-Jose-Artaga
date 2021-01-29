@@ -2,7 +2,16 @@
     <string name="app_name">People of Star Wars</string>
     <string name="title_core">core</string>
     <string name="title_data">DataModule</string>
+
+    <!-- HOME STRINGS -->
     <string name="item_loading">Loading</string>
     <string name="fail_to_load">Failed to Load Data</string>
 
+    <!-- DETAIL STRINGS -->
+    <string name="detail_item_general_info">General Information</string>
+    <string name="detail_item_general_vehicles">Vehicles</string>
+    <string name="detail_item_eye_color">Eye Color</string>
+    <string name="detail_item_hair_color">Hair Color</string>
+    <string name="detail_item_skin_color">Skin Color</string>
+    <string name="detail_item_birth_year">Birth Year</string>
 </resources>

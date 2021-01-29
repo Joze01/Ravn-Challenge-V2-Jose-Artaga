@@ -11,6 +11,7 @@ import com.ravn.core.model.util.Event
 import com.ravn.ravn_challenge_v2_jose_arteaga.R
 import com.ravn.ravn_challenge_v2_jose_arteaga.databinding.ItemPeopleBinding
 
+
 class PeopleListAdapter(
     private var itemList: List<PeopleModel> = mutableListOf(),
     val itemClick: MutableLiveData<Event<PeopleModel>>,
@@ -65,6 +66,10 @@ class PeopleListAdapter(
         itemList.count() + 1
     } else {
         itemList.count()
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
     }
 
     override fun getItemViewType(position: Int): Int =

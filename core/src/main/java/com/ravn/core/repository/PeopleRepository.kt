@@ -12,8 +12,6 @@ interface PeopleRepository {
         firstLoad: Boolean = false
     ): LiveData<Resource<List<PeopleModel>>>
 
-    suspend fun getStarWarsPeopleById(peopleId: String): PeopleModel
-
     companion object {
         const val DEFAULT_PAGE_SIZE = 5
         const val DEFAULT_CURSOR = ""
