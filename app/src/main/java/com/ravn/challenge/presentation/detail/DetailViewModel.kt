@@ -1,17 +1,29 @@
 package com.ravn.challenge.presentation.detail
 
 import androidx.annotation.StringRes
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ravn.challenge.R
+import com.ravn.challenge.presentation.util.RavnResourceManager
 import com.ravn.core.model.starwars.PeopleModel
 import com.ravn.core.model.starwars.detail.DetailItemModel
 import com.ravn.core.model.util.DetailViewType
-import com.ravn.challenge.R
-import com.ravn.challenge.presentation.util.RavnResourceManager
+import com.ravn.core.model.util.Event
 
 class DetailViewModel(val resourceManager: RavnResourceManager) : ViewModel() {
     val listResult = mutableListOf<DetailItemModel>()
+    val screenTittle = ObservableField("")
+
+    //Back button event handler
+    val backButtonClickEvent = MutableLiveData<Event<Any>>()
+
+    // Added a progress bar cause to avoid blank screen while load
+    val progressBarVisible = ObservableBoolean(true)
 
     fun prepareList(peopleModel: PeopleModel) {
+        progressBarVisible.set(true)
         addHeaderToList(
             R.string.detail_item_general_info
         )
@@ -27,7 +39,7 @@ class DetailViewModel(val resourceManager: RavnResourceManager) : ViewModel() {
         peopleModel.birthYear?.let {
             addAtributeToList(R.string.detail_item_birth_year, it)
         }
-        if (peopleModel.vehiclesConnection.isNullOrEmpty()) {
+        if (!peopleModel.vehiclesConnection.isNullOrEmpty()) {
             addHeaderToList(
                 R.string.detail_item_general_vehicles
             )
@@ -37,6 +49,10 @@ class DetailViewModel(val resourceManager: RavnResourceManager) : ViewModel() {
                 }
             }
         }
+    }
+
+    fun onBackPressedClick() {
+        backButtonClickEvent.postValue(Event(Any()))
     }
 
     fun addAtributeToList(@StringRes stringResId: Int, value: String) {

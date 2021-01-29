@@ -3,18 +3,20 @@ package com.ravn.challenge.presentation.home.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.VisibleForTesting
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.ravn.core.model.starwars.PeopleModel
-import com.ravn.core.model.util.Event
 import com.ravn.challenge.R
 import com.ravn.challenge.databinding.ItemPeopleBinding
+import com.ravn.core.model.starwars.PeopleModel
+import com.ravn.core.model.util.Event
 
 class PeopleListAdapter(
     private var itemList: List<PeopleModel> = mutableListOf(),
     val itemClick: MutableLiveData<Event<PeopleModel>>,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     var isLoading = true
 
     fun setData(newList: List<PeopleModel>) {

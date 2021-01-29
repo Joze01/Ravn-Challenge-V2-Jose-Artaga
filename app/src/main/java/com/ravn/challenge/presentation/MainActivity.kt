@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.ravn.challenge.R
 import com.ravn.challenge.base.BaseActivity
 import com.ravn.challenge.databinding.ActivityMainBinding
-import com.ravn.challenge.presentation.util.setObserver
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
@@ -17,11 +16,5 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = getBindedView(R.layout.activity_main)
-        actionBar?.setHomeButtonEnabled(true)
-        viewModel.screenTitle.setObserver(this, ::bindTittleToView)
-    }
-
-    fun bindTittleToView(title: String) {
-        this.title = title
     }
 }
