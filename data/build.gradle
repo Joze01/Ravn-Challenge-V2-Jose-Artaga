@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id "com.apollographql.apollo" version"2.2.0"
+    id "com.apollographql.apollo" version "2.5.2"
 }
 
 android {
@@ -35,40 +35,46 @@ android {
 }
 
 apollo {
+    // Dont forget to manually set file dir, I lost 2 hours of my life cause this line.
+    schemaFile = file("src/main/java/com/ravn/network/remote/graphql/schema.json")
+    rootPackageName = "com.ravn"
     generateKotlinModels.set(true)
 }
 
 dependencies {
 
     // Modules
-    implementation              project(":core")
+    implementation project(":core")
 
     // Core
-    implementation              core.kotlin_stdlib
-    implementation              core.core_ktx
-    implementation              core.coroutines
-    implementation              core.koin
+    implementation core.kotlin_stdlib
+    implementation core.core_ktx
+    implementation core.coroutines
+    implementation core.koin
 
     // Testing
-    testImplementation          testImplementation.junit
-    testImplementation          testImplementation.test_core
-    testImplementation          testImplementation.mockito_core
+    testImplementation testImplementation.junit
+    testImplementation testImplementation.test_core
+    testImplementation testImplementation.mockito_core
 
     // Room
-    implementation              room.room_runtime
-    implementation              room.room_ktx
-    kapt                        room.room_compiler
+    implementation room.room_runtime
+    implementation room.room_ktx
+    kapt room.room_compiler
 
     // Lifecycle
-    implementation              lifecycle.livedata
+    implementation lifecycle.livedata
 
     // Networking
-    implementation              networking.retrofit
-    implementation              networking.converter_gson
-    implementation              networking.logging_interceptor
+    implementation networking.retrofit
+    implementation networking.converter_gson
+    implementation networking.logging_interceptor
     // The core runtime dependencies
-    implementation("com.apollographql.apollo:apollo-runtime:2.2.0")
+    // The core runtime dependencies
+    implementation("com.apollographql.apollo:apollo-runtime:2.5.2")
     // Coroutines extensions for easier asynchronicity handling
-    implementation("com.apollographql.apollo:apollo-coroutines-support:2.2.0")
-    implementation              networking.gson
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.2")
+    implementation("com.apollographql.apollo:apollo-android-support:2.5.2")
+
+    implementation networking.gson
 }

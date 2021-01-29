@@ -1,0 +1,28 @@
+query AllPeopleList($pageSize:Int!,$cursor:String!){
+   allPeople(first: $pageSize after: $cursor){
+    people {
+      id
+      name
+      eyeColor
+      hairColor
+      skinColor
+      birthYear
+      species {
+        id
+        name
+      }
+      vehicleConnection{
+        vehicles{
+          name
+          model
+        }
+      }
+    }
+    pageInfo{
+    startCursor
+    endCursor
+    hasNextPage
+    hasPreviousPage
+    }
+  }
+}

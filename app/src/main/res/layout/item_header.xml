@@ -7,30 +7,29 @@
 
         <variable
             name="viewModel"
-            type="com.ravn.ravn_challenge_v2_jose_arteaga.presentation.home.list.PeopleListItemViewModel" />
+            type="com.ravn.challenge.presentation.detail.list.ItemDetailListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="@{()->viewModel.onItemClick()}">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.peopleName}"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{viewModel.labelField}"
             android:textColor="@color/text_dark"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="32dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="General Information" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

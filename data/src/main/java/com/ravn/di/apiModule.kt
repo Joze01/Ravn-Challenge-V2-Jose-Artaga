@@ -6,7 +6,9 @@ import org.koin.dsl.module
 val apiModule = module {
     single {
         ApolloClient.builder()
-            .serverUrl("https://swapi-graphql.netlify.app/.netlify/functions/index")
+            .serverUrl(SERVER_URL)
             .build()
     }
 }
+
+const val SERVER_URL = "https://swapi-graphql.netlify.app/.netlify/functions/index"

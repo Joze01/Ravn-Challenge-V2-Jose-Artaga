@@ -8,5 +8,7 @@ data class PeopleModel(
     val skinColor: String? = null,
     val birthYear: String? = null,
     val vehiclesConnection: MutableList<VehiclesModel>? = null,
-    val species: SpecieModel? = null
+    val species: SpecieModel? = null,
+    val lastCursor: String = "",
+    val hasNextPage: Boolean? = false
 )

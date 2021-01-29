@@ -16,4 +16,7 @@ interface PeopleDao {
 
     @Query("SELECT * FROM PeopleEntity WHERE id=:peopleId")
     suspend fun getPeopleById(peopleId: String): PeopleEntity
+
+    @Query("SELECT * FROM PeopleEntity")
+    suspend fun getPeople(): MutableList<PeopleEntity>
 }

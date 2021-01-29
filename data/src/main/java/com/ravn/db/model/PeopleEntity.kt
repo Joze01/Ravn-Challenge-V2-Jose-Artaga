@@ -10,15 +10,16 @@ import com.ravn.util.mapper.CoreMapper
 @Entity
 class PeopleEntity(
     @PrimaryKey
-    val id: String,
-    val name: String? = null,
-    val eyeColor: String? = null,
-    val hairColor: String? = null,
-    val skinColor: String? = null,
-    val birthYear: String? = null,
-    val vehiclesConnection: MutableList<VehiclesModel>? = null,
-    val species: SpecieModel? = null
+    var id: String,
+    var name: String? = null,
+    var eyeColor: String? = null,
+    var hairColor: String? = null,
+    var skinColor: String? = null,
+    var birthYear: String? = null,
+    var vehiclesConnection: MutableList<VehiclesModel>? = null,
+    var species: SpecieModel? = null,
+    val lastCursor: String = "",
+    val hasNextPage: Boolean? = false
 ) : CoreMapper<PeopleModel>() {
     override fun toCoreModel() = parse<PeopleModel>(this)
-
 }

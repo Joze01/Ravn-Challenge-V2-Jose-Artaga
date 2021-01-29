@@ -6,7 +6,6 @@ import com.google.gson.GsonBuilder
 // Clean Architecture
 
 abstract class BaseMapper {
-
     inline fun <reified T> parse(src: Any): T {
         with(
             GsonBuilder()
@@ -19,5 +18,4 @@ abstract class BaseMapper {
             )
         }
     }
-
 }
