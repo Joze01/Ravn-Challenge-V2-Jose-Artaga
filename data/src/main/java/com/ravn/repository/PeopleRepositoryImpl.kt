@@ -14,9 +14,9 @@ import com.ravn.db.dao.PeopleDao
 import com.ravn.db.model.PeopleEntity
 import com.ravn.util.NetworkBoundResource
 
-
 class PeopleRepositoryImpl(
-    val peopleDao: PeopleDao, val apolloClient: ApolloClient
+    val peopleDao: PeopleDao,
+    val apolloClient: ApolloClient
 
 ) : PeopleRepository {
     override fun fetchStarWarsPeople(

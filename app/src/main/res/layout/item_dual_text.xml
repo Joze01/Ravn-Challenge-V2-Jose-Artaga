@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.ravn.ravn_challenge_v2_jose_arteaga.presentation.detail.list.ItemDetailListViewModel" />
+            type="com.ravn.challenge.presentation.detail.list.ItemDetailListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

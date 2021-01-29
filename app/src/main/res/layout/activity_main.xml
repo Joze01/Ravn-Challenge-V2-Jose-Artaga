@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.ravn.ravn_challenge_v2_jose_arteaga.presentation.SharedViewModel" />
+            type="com.ravn.challenge.presentation.SharedViewModel" />
 
     </data>
 

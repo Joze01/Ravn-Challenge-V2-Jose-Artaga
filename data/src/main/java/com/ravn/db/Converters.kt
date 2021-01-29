@@ -20,10 +20,12 @@ class Converters {
 
     @TypeConverter
     fun toFormFieldList(value: String?): List<VehiclesModel>? {
-        return (Gson().fromJson(
-            value,
-            Array<VehiclesModel>::class.java
-        ) as Array<VehiclesModel>).toList()
+        return (
+            Gson().fromJson(
+                value,
+                Array<VehiclesModel>::class.java
+            ) as Array<VehiclesModel>
+            ).toList()
     }
 
     @TypeConverter

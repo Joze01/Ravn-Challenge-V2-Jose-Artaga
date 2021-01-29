@@ -40,13 +40,19 @@ ktlint {
 
 detekt {
     failFast = true
-    buildUponDefaultConfig = true
+    buildUponDefaultConfig = false
+    input = files(
+            "$projectDir/app/src/main/java",
+            "$projectDir/core/src/main/java",
+            "$projectDir/data/src/main/java"
+    )
     reports {
         html.enabled = true
         xml.enabled = true
         txt.enabled = true
     }
 }
+
 // Groovy DSL
 tasks.detekt.jvmTarget = app.java_version
 
@@ -54,7 +60,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-task localCheck(type: GradleBuild) {
+task sanityCheck(type: GradleBuild) {
     tasks = ['ktlintFormat', 'ktlintCheck', 'detekt']
     group = "verification"
     description = "Runs a local check before doing a manual unit test run."
