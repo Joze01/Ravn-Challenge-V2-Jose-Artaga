@@ -15,7 +15,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
     // We override the base viewModel variable by injecting it via Koin
     override val viewModel: DetailViewModel by viewModel()
     val sharedViewModel: SharedViewModel by sharedViewModel()
-
+    lateinit var detailListAdapter: DetailListAdapter
     override fun onFragmentReady() {
         viewModel.screenTittle.set(sharedViewModel.peopleModel.name)
         viewModel.prepareList(sharedViewModel.peopleModel)
@@ -25,7 +25,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
     }
 
     fun prepareRecyclerView() {
-        binding.rvDetail.adapter = DetailListAdapter(viewModel.listResult)
+        detailListAdapter = DetailListAdapter(viewModel.listResult)
+        binding.rvDetail.adapter = detailListAdapter
         binding.rvDetail.layoutManager = LinearLayoutManager(requireContext())
         viewModel.progressBarVisible.set(false)
     }

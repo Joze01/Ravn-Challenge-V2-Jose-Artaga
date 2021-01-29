@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Looper
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.testing.FragmentScenario
-import com.prototype.urbandictionary.test.TestApp
+import com.ravn.challenge.test.TestApp
 import com.ravn.challenge.R
 import kotlinx.coroutines.runBlocking
 import org.junit.Before

@@ -36,14 +36,14 @@ android {
 dependencies {
 
     // Core
-    implementation              core.kotlin_stdlib
-    implementation              core.core_ktx
+    implementation core.kotlin_stdlib
+    implementation core.core_ktx
 
     // Testing
-    testImplementation          testImplementation.junit
-    testImplementation          testImplementation.test_core
-    testImplementation          testImplementation.mockito_core
+    testImplementation testImplementation.junit
+    testImplementation testImplementation.test_core
+    testImplementation testImplementation.mockito_core
 
     // Lifecycle
-    implementation              lifecycle.livedata
+    implementation lifecycle.livedata
 }

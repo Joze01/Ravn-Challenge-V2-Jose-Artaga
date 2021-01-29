@@ -2,7 +2,7 @@ package com.prototype.urbandictionary.util
 
 import android.os.Build
 import androidx.lifecycle.ViewModel
-import com.prototype.urbandictionary.test.TestApp
+import com.ravn.challenge.test.TestApp
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.runner.RunWith

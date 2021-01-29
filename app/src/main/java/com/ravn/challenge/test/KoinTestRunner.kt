@@ -3,6 +3,7 @@ package com.prototype.urbandictionary.test
 import android.app.Application
 import android.content.Context
 import androidx.test.runner.AndroidJUnitRunner
+import com.ravn.challenge.test.TestApp
 
 class KoinTestRunner: AndroidJUnitRunner() {
     override fun newApplication(cl: ClassLoader?, className: String?, context: Context?): Application {

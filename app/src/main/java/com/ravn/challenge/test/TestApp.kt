@@ -1,4 +1,4 @@
-package com.prototype.urbandictionary.test
+package com.ravn.challenge.test
 
 import com.ravn.challenge.RavnApplication
 import org.koin.core.context.loadKoinModules

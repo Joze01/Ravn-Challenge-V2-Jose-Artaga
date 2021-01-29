@@ -1,5 +1,6 @@
 package com.ravn.challenge.presentation.home
 
+import androidx.annotation.VisibleForTesting
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ravn.core.model.starwars.PeopleModel
@@ -28,6 +29,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         initRecyclerView()
     }
 
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun peopleObserver(resource: Resource<List<PeopleModel>>) {
         when (resource.status) {
             Resource.Status.SUCCESS -> {

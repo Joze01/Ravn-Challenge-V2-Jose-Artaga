@@ -1,7 +1,7 @@
 package com.prototype.urbandictionary.util
 
 import androidx.test.core.app.ApplicationProvider
-import com.prototype.urbandictionary.test.TestApp
+import com.ravn.challenge.test.TestApp
 import org.junit.After
 import org.koin.core.context.stopKoin
 import org.koin.dsl.ModuleDeclaration

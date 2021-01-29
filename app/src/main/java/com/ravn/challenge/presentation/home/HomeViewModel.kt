@@ -19,7 +19,6 @@ class HomeViewModel(
     val showError = ObservableBoolean(false)
 
     // LiveData for recyclerView
-    val mutableLiveData = MutableLiveData<Event<List<PeopleModel>>>()
     val itemClick = MutableLiveData<Event<PeopleModel>>()
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
