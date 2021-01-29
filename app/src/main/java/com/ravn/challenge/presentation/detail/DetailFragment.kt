@@ -6,6 +6,7 @@ import com.ravn.challenge.base.BaseFragment
 import com.ravn.challenge.databinding.FragmentDetailBinding
 import com.ravn.challenge.presentation.SharedViewModel
 import com.ravn.challenge.presentation.detail.list.DetailListAdapter
+import com.ravn.challenge.presentation.util.setObserver
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -16,12 +17,20 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_det
     val sharedViewModel: SharedViewModel by sharedViewModel()
 
     override fun onFragmentReady() {
+        viewModel.screenTittle.set(sharedViewModel.peopleModel.name)
         viewModel.prepareList(sharedViewModel.peopleModel)
         prepareRecyclerView()
+
+        viewModel.backButtonClickEvent.setObserver(viewLifecycleOwner, ::backPressObserver)
     }
 
     fun prepareRecyclerView() {
         binding.rvDetail.adapter = DetailListAdapter(viewModel.listResult)
         binding.rvDetail.layoutManager = LinearLayoutManager(requireContext())
+        viewModel.progressBarVisible.set(false)
+    }
+
+    fun backPressObserver(value: Any) {
+        requireActivity().onBackPressed()
     }
 }
