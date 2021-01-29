@@ -30,3 +30,5 @@ I tried to handle 3 modules, App module handle android framework, Core module is
   - Robolectric
   - Espresso
 
+## Gift Demo 
+https://giphy.com/gifs/lN0BwJkDFkqKcLmxhh/html5
